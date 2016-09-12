@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+	<h:head />
+	<h:body>
+			<h:panelGroup>
+				<h:outputText value="Filtros" />
+				<h:form id="idForm">
+				
+					<h:selectOneRadio value="Estado">
+					   <f:selectItem itemValue="1" itemLabel="Todos " />
+					   <f:selectItem itemValue="2" itemLabel="Activos " />	 
+					   <f:selectItem itemValue="2" itemLabel="Inactivos " />	  			
+					</h:selectOneRadio>	
+					
+					<h:panelGrid columns="2" width="100%"
+						columnClasses="columnLabelsDetalle,columnDatosDetalle">
+	
+						<h:outputLabel value="Rol"></h:outputLabel>
+						<h:outputLabel value="Organization"></h:outputLabel>
+						
+						<h:inputText value="" label="Rol" required="true"></h:inputText>
+						<h:inputText value="" label="Organization" required="true"></h:inputText>
+	
+					</h:panelGrid>
+					<div class="spacer15"></div>
+					<div align="center">
+						<h:panelGrid columns="2">
+							<h:commandButton action="#{usuarioBean.buscarUsuarios}" value="Crear Reporte">
+							</h:commandButton>
+	
+							<h:commandButton immediate="true" type="reset" value="#{i18n['limpiar']}">
+							</h:commandButton>
+						</h:panelGrid>
+					</div>
+				</h:form>
+			</h:panelGroup>
+	</h:body>
+</f:view>
